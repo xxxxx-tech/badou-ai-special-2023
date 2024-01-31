@@ -1,4 +1,6 @@
 from __future__ import division
+import os
+os.environ['HDF5_DISABLE_VERSION_CHECK']='2'
 from nets.frcnn import get_model
 from nets.frcnn_training import cls_loss,smooth_l1,Generator,get_img_output_length,class_loss_cls,class_loss_regr
 

@@ -41,20 +41,20 @@ class BatchNormalization(Layer):
         self.input_spec = [InputSpec(shape=input_shape)]
         shape = (input_shape[self.axis],)
 
-        self.gamma = self.add_weight(shape,
+        self.gamma = self.add_weight(shape=shape,
                                      initializer=self.gamma_init,
                                      regularizer=self.gamma_regularizer,
                                      name='{}_gamma'.format(self.name),
                                      trainable=False)
-        self.beta = self.add_weight(shape,
+        self.beta = self.add_weight(shape=shape,
                                     initializer=self.beta_init,
                                     regularizer=self.beta_regularizer,
                                     name='{}_beta'.format(self.name),
                                     trainable=False)
-        self.running_mean = self.add_weight(shape, initializer='zero',
+        self.running_mean = self.add_weight(shape=shape, initializer='zero',
                                             name='{}_running_mean'.format(self.name),
                                             trainable=False)
-        self.running_std = self.add_weight(shape, initializer='one',
+        self.running_std = self.add_weight(shape=shape, initializer='one',
                                            name='{}_running_std'.format(self.name),
                                            trainable=False)
 
@@ -185,7 +185,7 @@ def ResNet50(inputs):
 
 def identity_block_td(input_tensor, kernel_size, filters, stage, block, trainable=True):
     nb_filter1, nb_filter2, nb_filter3 = filters
-    if K.image_dim_ordering() == 'tf':
+    if K.image_data_format() == 'channels_last':
         bn_axis = 3
     else:
         bn_axis = 1
@@ -211,7 +211,7 @@ def identity_block_td(input_tensor, kernel_size, filters, stage, block, trainabl
 
 def conv_block_td(input_tensor, kernel_size, filters, stage, block, input_shape, strides=(2, 2), trainable=True):
     nb_filter1, nb_filter2, nb_filter3 = filters
-    if K.image_dim_ordering() == 'tf':
+    if K.image_data_format() == 'channels_last':
         bn_axis = 3
     else:
         bn_axis = 1

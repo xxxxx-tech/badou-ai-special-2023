@@ -1,3 +1,5 @@
+import os
+os.environ['HDF5_DISABLE_VERSION_CHECK']='2'
 from keras.layers import Input
 from frcnn import FRCNN 
 from PIL import Image
