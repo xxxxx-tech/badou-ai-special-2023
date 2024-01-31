@@ -1,10 +1,11 @@
+import os
+os.environ['HDF5_DISABLE_VERSION_CHECK']='2'
 from nets import vgg16
 import tensorflow as tf
 import numpy as np
 import utils
-
 # 读取图片
-img1 = utils.load_image("./test_data/dog.jpg")
+img1 = utils.load_image("./test_data/table.jpg")
 
 # 对输入的图片进行resize，使其shape满足(-1,224,224,3)
 inputs = tf.placeholder(tf.float32,[None,None,3])

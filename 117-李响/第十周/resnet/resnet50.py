@@ -2,6 +2,9 @@
 #   ResNet50的网络部分
 #-------------------------------------------------------------#
 from __future__ import print_function
+import os
+os.environ['HDF5_DISABLE_VERSION_CHECK']='2'
+
 
 import numpy as np
 from keras import layers
@@ -115,7 +118,7 @@ def ResNet50(input_shape=[224,224,3],classes=1000):
 if __name__ == '__main__':
     model = ResNet50()
     model.summary()
-    img_path = 'elephant.jpg'
+    img_path = 'bike.jpg'
     # img_path = 'bike.jpg'
     img = image.load_img(img_path, target_size=(224, 224))
     x = image.img_to_array(img)

@@ -1,4 +1,6 @@
 #该文件的目的是构造神经网络的整体结构，并进行训练和测试（评估）过程
+import os
+os.environ['HDF5_DISABLE_VERSION_CHECK']='2'
 import tensorflow as tf
 import numpy as np
 import time

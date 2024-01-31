@@ -1,3 +1,5 @@
+import os
+os.environ['HDF5_DISABLE_VERSION_CHECK']='2'
 from keras.callbacks import TensorBoard, ModelCheckpoint, ReduceLROnPlateau, EarlyStopping
 from keras.utils import np_utils
 from keras.optimizers import Adam
@@ -6,7 +8,7 @@ import numpy as np
 import utils
 import cv2
 from keras import backend as K
-K.set_image_dim_ordering('tf')
+# K.set_image_dim_ordering('tf')
 
 def generate_arrays_from_file(lines,batch_size):
     # 获取总长度

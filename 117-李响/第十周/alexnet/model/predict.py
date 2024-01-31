@@ -8,7 +8,7 @@ from model.AlexNet import AlexNet
 
 if __name__ == "__main__":
     model = AlexNet()
-    # model.load_weights("./logs/ep039-loss0.004-val_loss0.652.h5")
+    model.load_weights("./logs/last1.h5")
     img = cv2.imread("./Test.jpg")
     img_RGB = cv2.cvtColor(img,cv2.COLOR_BGR2RGB)
     img_nor = img_RGB/255
