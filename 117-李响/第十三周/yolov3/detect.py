@@ -1,4 +1,5 @@
 import os
+os.environ['HDF5_DISABLE_VERSION_CHECK']='2'
 import config
 import argparse
 import numpy as np

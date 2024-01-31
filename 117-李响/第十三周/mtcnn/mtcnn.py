@@ -1,3 +1,5 @@
+import os
+os.environ['HDF5_DISABLE_VERSION_CHECK']='2'
 from keras.layers import Conv2D, Input,MaxPool2D, Reshape,Activation,Flatten, Dense, Permute
 from keras.layers.advanced_activations import PReLU
 from keras.models import Model, Sequential

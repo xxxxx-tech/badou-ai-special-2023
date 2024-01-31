@@ -31,4 +31,4 @@ darknet53_weights_path = './model_data/darknet53.weights'
 anchors_path = './model_data/yolo_anchors.txt'
 classes_path = './model_data/coco_classes.txt'
 
-image_file = "./img/img.jpg"
+image_file = "./img/img2.jpg"

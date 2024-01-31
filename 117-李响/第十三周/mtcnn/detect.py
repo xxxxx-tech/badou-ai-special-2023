@@ -1,8 +1,10 @@
+import os
+os.environ['HDF5_DISABLE_VERSION_CHECK']='2'
 import cv2
 import numpy as np
 from mtcnn import mtcnn
 
-img = cv2.imread('img/test1.jpg')
+img = cv2.imread('img/timg.jpg')
 
 model = mtcnn()
 threshold = [0.5,0.6,0.7]  # 三段网络的置信度阈值不同
