@@ -9,7 +9,7 @@ mask_rcnn = MASK_RCNN()
 while True:
     img = input('img/street.jpg')
     try:
-        image = Image.open('img/0.jpg')
+        image = Image.open('img/street.jpg')
     except:
         print('Open Error! Try again!')
         continue
